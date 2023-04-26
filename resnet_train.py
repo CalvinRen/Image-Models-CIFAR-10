@@ -19,7 +19,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # wandb init
 if args.wandb:
-    wandb.init(project='vision_models', name='ViT-timm')
+    wandb.init(project='vision_models', name=args.wandb_name)
     wandb.config.update(args)
 
 

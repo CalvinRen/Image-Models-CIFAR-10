@@ -11,7 +11,7 @@ from .Cutout import Cutout
 def train_dataloader(args):
     if args.model == 'vit_timm':
         size = 224
-    elif args.model == 'resnet':
+    elif args.model == 'resnet18':
         size = 24
     else:
         raise NotImplementedError
@@ -33,8 +33,8 @@ def train_dataloader(args):
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
 
-    train_dataset = CIFAR10(root='/data/qxren/Projects/pytorch-tutorial-master/vision_models/data/', train=True, download=False, transform=train_transform)
-    valid_dataset = CIFAR10(root='/data/qxren/Projects/pytorch-tutorial-master/vision_models/data/', train=True, download=False, transform=valid_transform)
+    train_dataset = CIFAR10(root=args.dataset_path, train=True, download=False, transform=train_transform)
+    valid_dataset = CIFAR10(root=args.dataset_path, train=True, download=False, transform=valid_transform)
     
     # 将训练集拆分成训练集和验证集
     train_indices = list(range(len(train_dataset)))
@@ -52,7 +52,7 @@ def train_dataloader(args):
 def test_dataloader(args):
     if args.model == 'vit_timm':
         size = 224
-    elif args.model == 'resnet':
+    elif args.model == 'resnet18':
         size = 24
     else:
         raise NotImplementedError
@@ -63,7 +63,7 @@ def test_dataloader(args):
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
 
-    test_dataset = CIFAR10(root='/data/qxren/Projects/pytorch-tutorial-master/vision_models/data/', train=False, download=False, transform=test_transform)
+    test_dataset = CIFAR10(root=args.dataset_path, train=False, download=False, transform=test_transform)
 
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
 

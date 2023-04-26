@@ -12,8 +12,10 @@ parser.add_argument('--batch_size', type=int, default=128)
 parser.add_argument('--num_workers', type=int, default=4)
 parser.add_argument('--data_dir', type=str, default='./data')
 parser.add_argument('--load_model_path', type=str, default='./checkpoints')
-parser.add_argument('--weight_decay', type=float, default=5e-4)')
+parser.add_argument('--weight_decay', type=float, default=5e-4)
 parser.add_argument('--cutout', type=bool, default=True)
+parser.add_argument('--dataset_path', type=str, default='./data')
+parser.add_argument('--wandb_name', type=str, default='nameless')
 
 args = parser.parse_args()
 

@@ -1,3 +1,3 @@
-CUDA_VISIBLE_DEVICES=3 python test.py --model='vit_timm' \
+CUDA_VISIBLE_DEVICES=1 python test.py --model='resnet18' \
                                     --batch_size=128 \
-                                    --load_model_path='./checkpoints/vit.pth'
+                                    --load_model_path='./checkpoints/resnet18.pth'
