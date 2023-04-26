@@ -105,7 +105,7 @@ for epoch in tqdm(range(args.epoch)):
 
 
 # save model
-torch.save(model.state_dict(), './checkpoints/{}.pth'.format(args.model))
+torch.save(model.state_dict(), '../checkpoints/{}.pth'.format(args.model))
 
 # finish wandb
 wandb.finish()
