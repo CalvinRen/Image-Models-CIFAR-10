@@ -2,6 +2,8 @@
 Computer Vision Models implemented in PyTorch. Train and Test on CIFAR-10 dataset. To be updated...
 
 ## TODO List
+- [x] Auto-Encoder
+- [x] Variational Auto-Encoder
 - [x] ResNet 
 - [x] Vision Transformer (ViT) 
 - [ ] MAE (TODO)
